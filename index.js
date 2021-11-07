@@ -1,24 +1,4 @@
-    const express = require('express')
-    const index = express()
-    const port = 3000
+const fs = require("fs");
 
-    index.get('/', (req, res) => {
-      res.send('Welcome to Anna-Emma Metaverse shop!')
-    })
-
-    index.get('/about', (req, res) => {
-      res.send('About')
-    })
-
-    index.get('/home', (req, res) => {
-      res.send('Home')
-    })
-
-    index.get('/contact-us', (req, res) => {
-      res.send('Contact')
-    })
-
-
-    index.listen(port, () => {
-      console.log(`Example app listening at http://localhost:${port}`)
-    })
+var st = fs.readFileSync('01.txt');
+fs.appendFileSync('02.txt',st.toString());
